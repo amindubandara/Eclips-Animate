@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+  }
+  
+  * {
+    animation: 60s infinite linear;
+  }
+  
+  .sky {
+    width: 100vw;
+    height: 100vh; /* Use viewport height for responsiveness */
+    background-color: skyblue;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: animate-sky;
+  }
+  
+  .sun,
+  .moon {
+    position: absolute;
+    width: 40vw; /* Adjust size using viewport units */
+    height: 40vw; /* Adjust size using viewport units */
+    border-radius: 50%;
+  }
+  
+  .sun {
+    background-color: gold;
+    animation-name: animate-sun;
+  }
+  
+  .moon {
+    background-color: slategray;
+    transform: translateX(-55vw); /* Adjust translation using viewport units */
+    animation-name: animate-moon;
+  }
+  
+  @keyframes animate-sky {
+    50% {
+      background-color: black;
+    }
+  }
+  
+  @keyframes animate-sun {
+    50% {
+      box-shadow: 0 0 5em 1em white;
+    }
+  }
+  
+  @keyframes animate-moon {
+    from {
+      transform: translateX(-100vw);
+      animation-timing-function: cubic-bezier(0.075, 0.821, 0.165, 1);
+      animation-play-state: paused;
+    }
+    50% {
+      transform: translateX(0);
+      background-color: black;
+    }
+    to {
+      transform: none ;
+      
+    }
+  }
+  
